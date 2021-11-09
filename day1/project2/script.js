@@ -287,3 +287,50 @@ const arr = [1000, 2000, 3000, 4000, 5000];
 
 // console.log(a);
 // console.log(b);
+
+// console.log(arr);
+
+// ----------
+// SPREAD
+
+// const arr1 = [1, 2, 3];
+// const arr2 = [...arr1];
+
+// console.log(arr1);
+// console.log(arr2);
+
+// arr2[1] = 22222222;
+
+// console.log(arr2);
+// console.log(arr1);
+
+// const obj1 = { a: 100 };
+// const obj2 = { ...obj1 };
+
+// console.log(obj1);
+// console.log(obj2);
+
+// obj2.a = 222222;
+// console.log(obj2);
+// console.log(obj1);
+
+//----------
+// Объекты
+
+// const obj = {
+//   a: 100,
+//   b: 200,
+//   name: 'Petr!',
+//   userName: 'Petr',
+//   'user-name': 'Petr111',
+// };
+
+// console.log(obj);
+// console.log(obj.a);
+// console.log(obj.userName);
+// console.log(obj.zzz);
+// console.log(obj['user-name']);
+// console.log(obj['a']);
+
+// const key = 'name';
+// console.log(obj[key]);
