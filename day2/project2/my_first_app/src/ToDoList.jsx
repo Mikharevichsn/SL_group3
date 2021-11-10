@@ -1,14 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import './ToDoList.css';
 
 const ToDoList = () => {
   const [inputText, setInputText] = useState('');
-  const [tasks, setTasks] = useState([
-    { id: uuidv4(), title: 'Сходить в магазин' },
-    { id: uuidv4(), title: 'Помыть посуду' },
-    { id: uuidv4(), title: 'Выучить реакт' },
-  ]);
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    try {
+      const tasksFromStorage = localStorage.getItem('tasks');
+      if (!tasksFromStorage) return;
+
+      const parsedTasks = JSON.parse(tasksFromStorage);
+      setTasks(parsedTasks);
+    } catch (err) {
+      console.log(err);
+      localStorage.removeItem('tasks');
+    }
+  }, []);
+
+  useEffect(() => {
+    if (tasks.length === 0) return;
+    const tasksAsJson = JSON.stringify(tasks);
+    localStorage.setItem('tasks', tasksAsJson);
+  }, [tasks]);
 
   console.log(tasks);
   console.log('inputText = ', inputText);

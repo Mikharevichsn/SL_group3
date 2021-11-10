@@ -334,3 +334,81 @@ const arr = [1000, 2000, 3000, 4000, 5000];
 
 // const key = 'name';
 // console.log(obj[key]);
+
+//--------
+// Асинхронность
+
+// Promise
+
+// let promise = new Promise((resolve, reject) => {
+//   if (Math.random() > 0.5) {
+//     reject('Ошибка !!!!');
+//   } else {
+//     setTimeout(() => {
+//       // переведёт промис в состояние fulfilled с результатом "result"
+//       resolve('result');
+//     }, 3000);
+//   }
+// });
+
+// promise
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     alert('Ошибка: ' + err);
+//   });
+
+// fetch('https://api.thecatapi.com/v1/images/search')
+//   .then((response) => {
+//     console.log(response);
+//     return response.json();
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// const fetchData = async () => {
+//   try {
+//     const response = await fetch(
+//       'https://api.111thecatapi.com/v1/images/search'
+//     );
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+
+// fetchData();
+
+// ------------
+// try catch
+
+// console.log(1);
+// console.log(2);
+
+// try {
+//   console.log(x);
+// } catch (err) {
+//   console.log(err);
+// }
+
+// console.log(3);
+// console.log(4);
+
+//-----------
+// localStorage
+
+//localStorage.setItem('myData', '123');
+
+localStorage.setItem('myData', JSON.stringify({ a: 100, b: 200 }));
+
+const data = localStorage.getItem('myData');
+console.log('data = ', data);
+
+const parsedData = JSON.parse(data);
+console.log('parsedData = ', parsedData);
